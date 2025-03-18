@@ -1,0 +1,37 @@
+<script>
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowUp') {
+            let player = document.getElementById('player');
+            if (!player.classList.contains('jumping')) {
+                player.classList.add('jumping');
+                player.style.animation = 'jump 1s ease-out';
+
+                setTimeout(() => {
+                    player.style.animation = '';
+                    player.classList.remove('jumping');
+                }, 1000);
+            }
+        }
+    });
+
+    function checkCollision() {
+        const player = document.getElementById('player');
+        const enemy = document.getElementById('enemy');
+
+        let playerRect = player.getBoundingClientRect();
+        let enemyRect = enemy.getBoundingClientRect();
+
+        if (
+            playerRect.right > enemyRect.left &&
+            playerRect.left < enemyRect.right &&
+            playerRect.bottom > enemyRect.top &&
+            playerRect.top < enemyRect.bottom
+        ) {
+            alert('Game Over');
+            window.location.reload(); // Restart game
+        }
+    }
+
+    // Run collision check every 50ms
+    setInterval(checkCollision, 50);
+</script>
