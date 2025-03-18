@@ -1,0 +1,58 @@
+#game{
+    width: 600px;
+    height:200px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+#car{
+    width:100px;
+    height:100px;
+    background-image: url('assert/car.png');
+    background-size: 100px 100px ;
+    position:relative;
+    top:100px;
+}
+
+
+.jump{
+    animation: jump 1s linear;
+}
+
+@keyframes jump{
+    0%{
+        top:100px;
+    }
+    25%{
+        top:70px;
+    }
+    50%{
+        top:40px;
+    }
+    75%{
+        top:70px;
+    } 
+    100%{
+        top:100px;
+    }
+}
+
+#pcar{
+    height: 100px;
+    width: 100px;
+    background-image: url('assert/p car.png');
+    background-size: 100px 100px;
+    position:relative;
+    left: 500px;
+    top:-10px;
+    animation: move 2s linear infinite;
+}
+
+@keyframes move{
+    0%{
+        left: 500px;
+    }
+    100%{
+        left: -100px;
+    }
+}
