@@ -1,17 +1,35 @@
-#game{
-    width: 600px;
-    height:200px;
-    border: 1px solid black;
-    margin: 0 auto;
+html, body {
+    height: 100%;
+    width: 100%;
 }
 
+
+body {
+    background-image: url('assert/bg.jpg');
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    animation: scrollBg 2s linear infinite;
+}
+
+@keyframes scrollBg {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
 #car{
-    width:100px;
-    height:100px;
+    width: 20%;
+    height: 15%;
+    position: absolute;
+    border: 5px solid black;
     background-image: url('assert/car.png');
-    background-size: 100px 100px ;
-    position:relative;
-    top:100px;
+    transform-origin: center bottom;
+    background-size: 100% 100%;
+    top: 67%;
 }
 
 
@@ -21,38 +39,44 @@
 
 @keyframes jump{
     0%{
-        top:100px;
+        top:67%;
+        transform: rotate(0deg);
     }
     25%{
-        top:70px;
+        top:55%;
+        transform: rotate(-20deg);
     }
     50%{
-        top:40px;
+        top:43%;
+        transform: rotate(0deg);
     }
     75%{
-        top:70px;
+        top:55%;
+        transform: rotate(20deg);
     } 
     100%{
-        top:100px;
+        top:67%;
+        transform: rotate(0deg);
     }
 }
 
 #pcar{
-    height: 100px;
-    width: 100px;
+    height: 13%;
+    width: 20%;
     background-image: url('assert/p car.png');
-    background-size: 100px 100px;
-    position:relative;
-    left: 500px;
-    top:-10px;
-    animation: move 2s linear infinite;
+    background-size: 100% 100%;
+    margin: 5px solid black;
+    position:absolute;
+    left: 100%;
+    top: 69%;
+    animation: move 1.8s linear infinite;
 }
 
-@keyframes move{
-    0%{
-        left: 500px;
+@keyframes move {
+    0% {
+        left: 100%;
     }
-    100%{
-        left: -100px;
+    100% {
+        left: -15%;
     }
 }
